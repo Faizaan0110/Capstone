@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Feed</title>
+</head>
+<body>
+    <h1>Video Feed</h1>
+    <video id="video-player" controls autoplay></video>
+
+    <script>
+        // JavaScript to load the video stream
+        const videoPlayer = document.getElementById('video-player');
+        videoPlayer.src = "{% url 'capture_video' %}";  // Use the URL of the capture_video view
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Glassmorphism Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <section>
+        <div class="leaves">
+            <div class="set">
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_01.png') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_02.png') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_03.png') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_04.png') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_01.png') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_02.png') }}" alt="">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_03.png') }}" alt="Image1">
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='img/leaf_04.png') }}" alt="Image1">
+                </div>
+            </div>
+        </div>
+        <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg" alt="bg">
+        <img src="{{ url_for('static', filename='img/girl.png') }}" class="girl" alt="girl">
+        <img src="{{ url_for('static', filename='img/trees.png') }}" class="trees" alt="trees">
+        <div class="login">
+            <h2>Sign Up</h2>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <p class="error">{{ messages[0] }}</p>
+                {% endif %}
+            {% endwith %}
+            <form action="/signup" method="post">
+                <div class="inputBox">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                </div>
+                <div class="inputBox">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+            <div class="group">
+                <a href="/forgot-password">Forget Password</a>
+                <a href="/signin">Sign In</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

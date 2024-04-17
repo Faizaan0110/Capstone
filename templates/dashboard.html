@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        #data-container, #chart-container {
+            width: 80%;
+            height: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    <div id="data-container">
+        <label for="student-input">Enter Student ID: </label>
+        <input type="text" id="student-input" placeholder="Enter student ID">
+        <button id="load-data-button">Load Data</button>
+        <h2>Student ID: <span id="student-id"></span></h2>
+        <h2>DC Attention Span: <span id="attention-span-subject-1"></span>%</h2>
+    </div>
+    <div id="chart-container">
+        <canvas id="line-chart" width="1000" height="400"></canvas>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- attention_tracker/templates/attention_tracker/data.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attention Data</title>
+</head>
+<body>
+    <h1>Attention Data</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Attention Span</th>
+                <th>Time (seconds)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.student.name }}</td>
+                <td>{{ record.attention_span }}</td>
+                <td>{{ record.time_seconds }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No attention data available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
